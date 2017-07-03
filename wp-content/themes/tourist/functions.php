@@ -45,6 +45,7 @@ function tourist_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'tourist' ),
+		'front-menu' => esc_html__('Front Page', 'tourist' ),
 	) );
 
 	/*
@@ -92,6 +93,15 @@ function tourist_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'tourist' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'tourist' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Social', 'tourist' ),
+		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'tourist' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',

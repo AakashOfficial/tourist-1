@@ -16,6 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500,500i,700,700i" rel="stylesheet">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" href="font/font-awesome/css/font-awesome.min.css">
 
 <?php wp_head(); ?>
 </head>
@@ -34,11 +35,9 @@
 			<?php
 			endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
+			$description = get_bloginfo( 'description', 'display' );?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
+				<div class="header-line"><img src="http://localhost:8888/tourist/wp-content/uploads/2017/06/blurred-line-1.png" alt="Blurred Line"/></div>
 
 			<div class="app-store">
 				<a href="https://itunes.apple.com/us/app/tourist-new-app/id1207732311?mt=8"><img src="http://localhost:8888/tourist/wp-content/uploads/2017/06/applestore.png" alt="Apple App Store" /></a>
@@ -47,11 +46,11 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tourist' ); ?></button>
+			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'tourist' ); ?></button> -->
 			<?php
 				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'theme_location' => is_front_page() ? 'front-menu' : 'menu-1',
+					'menu_id'        => is_front_page() ? 'front-page-menu' : 'primary-menu',
 				) );
 			?>
 		</nav><!-- #site-navigation -->

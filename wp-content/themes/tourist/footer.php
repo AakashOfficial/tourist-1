@@ -14,16 +14,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tourist' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'tourist' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tourist' ), 'tourist', '<a href="https://automattic.com/">Underscores.me</a>' );
-			?>
+
+			<h3>Tourist</h3>
+			<p>1-800-555-5555 | info@tourist.com</p>
+			<p>456 Anywhere Street, NY, NY 01250</p>
+			<p>&#169 2017 Pine Group</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
