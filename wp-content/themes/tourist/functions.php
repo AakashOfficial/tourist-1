@@ -42,10 +42,11 @@ function tourist_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'tourist' ),
 		'front-menu' => esc_html__('Front Page', 'tourist' ),
+		'top-menu' => esc_html__('Top Menu', 'tourist' )
 	) );
 
 	/*
@@ -120,6 +121,9 @@ function tourist_scripts() {
 	wp_enqueue_script( 'tourist-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'tourist-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_register_script( 'tourist-header-resize', get_template_directory_uri() . '/js/header-resize.js');
+	wp_enqueue_script('tourist-header-resize');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

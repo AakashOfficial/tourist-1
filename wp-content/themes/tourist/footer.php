@@ -15,10 +15,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
-			<h3>Tourist</h3>
-			<p>1-800-555-5555 | info@tourist.com</p>
-			<p>456 Anywhere Street, NY, NY 01250</p>
-			<p>&#169 2017 Pine Group</p>
+			<h3>Tourist New App</h3>
+			<p>Support: <a href="mailto:support@TouristNewApp.com">support@TouristNewApp.com</a></p>
+			<p><a href="http://touristnewapp.com/terms_privacy.html">Terms</a> and <a href="http://touristnewapp.com/privacy.html">Privacy Policy</a></p>
+			<p>&#169 2016-2099 Pine Group, LLC. All rights reserved.</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

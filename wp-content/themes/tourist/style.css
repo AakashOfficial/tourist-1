@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Media Queries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -468,9 +469,11 @@ table {
 	background-position: center;
 	width:100%;
 	height:100%;
-	padding-top:7%;
-	padding-bottom:7%;
-	overflow:auto;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+.site-intro {
+	clear:both;
 	display:flex;
 	justify-content: center;
 	align-items: center;
@@ -489,36 +492,45 @@ table {
 	-webkit-align-items: center;
 	-ms-flex-flow:column nowrap;
 	-webkit-flex-flow:column nowrap;
+	position: relative;
+	bottom:2px;
 }
-.site-title {
-	margin:0;
-	color:white;
-	font-family: 'AllerDisplay', 'Asap', sans-serif;
-	font-size:3.3em;
-	letter-spacing: .05em;
-	line-height: 1.3em;
-}
-.site-title a, .site-title a:visited, .site-title a:hover {
-	text-decoration:none;
-	color:white;
-}
-.site-description{
-	margin:0;
-	color:white;
-	font-variant: small-caps;
-	font-style: italic;
-	font-size:2em;
-	line-height: .8em;
-	/*text-decoration: underline;*/
-}
-.header-line {
-	margin:0 auto;
-	padding:0;
-	width:85%;
+.site-intro .title{
 	text-align: center;
-	/*display:none;*/
+	font-family: 'Aller', 'Asap', sans-serif;
+	font-size:3.3em;
+	font-weight: bold;
 }
-.app-store {
+.site-intro .title a, .site-intro .title a:visited, .site-intro .title a:hover {
+	text-decoration:none;
+	color:#dc6404;
+}
+.site-intro .logo{
+	width:18%;
+	position: relative;
+	left:2%;
+	top:26px;
+}
+.site-intro span {
+	text-shadow:0px 0px;
+	position:relative;
+	right:0px;
+	bottom:0px;
+}
+.site-intro h2{
+	color: white;
+	text-align: center;
+	margin:1% 0 0 0;
+}
+.site-intro p {
+	color:white;
+	text-align: center;
+	padding:0 10%;
+	font-variant: small-caps;
+	font-style: oblique;
+	margin:0;
+}
+.app-store p {
 	display: flex;
 	justify-content: center;
 	flex-flow:row nowrap;
@@ -604,9 +616,31 @@ table.step .curved-line-right{
 	right:50px;
 	bottom:80px;
 }
-.front-page button {
+.front-page a.button {
 	display: block;
 	margin:3% auto;
+	font-size: 1em;
+	width:50%;
+	padding:4%;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+/*----To account for header when resized-----*/
+
+#what:before, #how:before, #download:before {
+	display: block;
+  content: " ";
+  margin-top: -245px;
+	height: 245px;
+  visibility: hidden;
+}
+#guide:before, #refer:before {
+	display: block;
+  content: " ";
+  margin-top: -150px;
+	height: 150px;
+  visibility: hidden;
 }
 /*-----FOLLOW-----*/
 .follow {
@@ -620,6 +654,7 @@ table.step .curved-line-right{
 }
 .social-icon{
 	font-size:2em;
+	margin:1%;
 }
 .social-icon a{
 	color:#04bfdc;
@@ -633,7 +668,7 @@ footer{
 	background:#017C8F;
 	width:100%;
 	padding-top:20%;
-	margin-top:6%;
+	margin-top:30%;
 	color:white;
 	text-align: center;
 	display:flex;
@@ -650,235 +685,32 @@ footer p {
 	margin:0;
 	font-size:0.8em;
 }
+footer a{
+	color:white;
+}
 
-@media all and (min-width:21.875em){
-	.header-line {
-		width:84%;
-	}
+/*====== Resize Header on Scroll ==========*/
+#branding.smaller {
+	height:100px;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	position: fixed;
+	top:0;
+	z-index: 99;
 }
-@media all and (min-width:24.375em){
-	.header-line {
-		width:76%;
-	}
+.title-move {
+	position:relative;
+	bottom:8px;
 }
-@media all and (min-width:27.5em){
-	.header-line {
-		width:67%;
-	}
-	.app-store a {
-		width:17%;
-	}
+.title-move span {
+	text-shadow:0px 2px 3px #666666;
 }
-@media all and (min-width:31.375em){
-	.header-line {
-		width:58%;
-	}
-	table.step .step-number {
-		padding:1% 3%;
-	}
+.hidden {
+	display: none;
 }
-@media all and (min-width:37.5em){
-	.header-line {
-		width:47%;
-	}
-	.app-store a {
-		width:13%;
-	}
-}
-@media all and (min-width:47.5em){
-	.header-line {
-		width:38%;
-	}
-	.app-store a {
-		width:11%;
-	}
-	.main-navigation li {
-		width:20%;
-	}
-	.menu-front-page-menu-container {
-		margin:0 5%;
-	}
-	#what p, #how p {
-		margin-bottom:5%;
-	}
-	table.step {
-		margin:1% 1% 1% 1%;
-	}
-	table.step .step-number {
-		padding:1% 4%;
-	}
-	.straight-line {
-		display:none;
-	}
-	table.step .title-col{
-		vertical-align: top;
-		width:50%;
-		padding:10% 1% 1% 1%;
-	}
-	table.step .image-col{
-		width:40%;
-	}
-	table.step .step-description {
-		display:none;
-	}
-	table.step .step-description-desktop {
-		display:block;
-		line-height: 1.1em;
-	}
-	table.step.left.first, table.step.left.last {
-		width:60%;
-		margin:0% 10% -15% 5%;
-	}
-	table.step.left .title-col{
-		float:right;
-	}
-	table.step.left .image-col{
-		float:left;
-	}
-	table.step.left .step-description-desktop{
-		text-align: right;
-		margin-right:18%;
-	}
-	table.step.left .curved-line-left{
-		display:block;
-		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
-		background-size:cover;
-		padding-bottom:150%;
-		position:relative;
-		bottom:80px;
-		right:5px;
-	}
-	table.step.left .step-title {
-		text-align:right;
-	}
-	table.step.left .step-number {
-		float:right;
-	}
-	table.step.right.first {
-		width:60%;
-		margin:0% 10% -14% 35%;
-	}
-	table.step.right.last {
-		width:60%;
-		margin:0% 5% 0% 35%
-	}
-	table.step.right .title-col{
-		float:left;
-	}
-	table.step.right .image-col{
-		float:right;
-	}
-	table.step.right .step-description-desktop{
-		text-align: left;
-		margin-left:18%;
-	}
-	table.step.right .curved-line-right{
-		display:block;
-		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
-		background-size:cover;
-		-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-		padding-bottom:150%;
-		position:relative;
-		bottom:64px;
-		right:5px;
-	}
-	table.step.right .step-title {
-		text-align:left;
-	}
-
-	.front-page button {
-		font-size: 1.3em;
-	}
-	.follow {
-		margin:6% auto 0% auto;
-	}
-	.follow h2 {
-		font-size:2em;
-		letter-spacing: .1em;
-	}
-	.social-icon{
-		margin:1%;
-		font-size:2.5em;
-	}
-	footer{
-		padding-top:17%;
-	}
-}
-@media all and (min-width:54.25em){
-	table.step.left {
-		margin:0% 10% -10% 5%;
-	}
-	table.step.left .curved-line-left{
-		bottom:65px;
-	}
-	table.step.right .curved-line-right{
-		bottom:65px;
-	}
-	table.step.right.last {
-		margin:0% 5% 0% 35%
-	}
-}
-@media all and (min-width:57.1875em){
-	.header-line {
-		width:32%;
-	}
-	.app-store a {
-		width:9%;
-	}
-	.menu-front-page-menu-container {
-		margin:0 auto;
-		max-width: 1000px;
-	}
-}
-@media all and (min-width:66.875em){
-	.header-line {
-		width:27%;
-	}
-}
-@media all and (min-width:79.375em){
-	.header-line {
-		width:23%;
-	}
-}
-@media all and (min-width:94.375em){
-	.header-line {
-		width:19%;
-	}
-}
-@media all and (min-width:120.625em){
-	.site-title {
-		font-size:4em;
-	}
-	.site-description {
-		font-size:2.5em;
-	}
-	.app-store a {
-		width:11%;
-	}
-}
-@media all and (min-width:139.375em){
-	.header-line {
-		width:16%;
-	}
-}
-@media all and (min-width:218.75em){
-	.site-title {
-		font-size:5em;
-	}
-	.site-description {
-		font-size:3.5em;
-	}
-	.header-line {
-		width:15%;
-	}
-	.app-store a {
-		width:13%;
-	}
+.relative {
+	position:relative;
+	top:130px;
 }
 
 /*--------------------------------------------------------------
@@ -887,11 +719,12 @@ footer p {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.front-page .button {
 	border: 1px solid;
-	border-color: #04bfdc;
-	border-radius: 30px;
-	background: #04bfdc;
+	border-color: #017C8F;
+	border-radius: 4px;
+	background: #017C8F;
 	color: white;
 	font-size: 12px;
 	font-size: 1em;
@@ -902,9 +735,10 @@ input[type="submit"] {
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #017C8F;
-	background:#017C8F;
+input[type="submit"]:hover,
+.front-page .button:hover {
+	border-color: #01b0cb;
+	background:#01b0cb;
 }
 
 button:focus,
@@ -915,8 +749,8 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #017C8F;
-	background:#017C8F;
+	border-color: #01b0cb;
+	background:#01b0cb;
 }
 
 input[type="text"],
@@ -1000,13 +834,36 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.top-navigation {
+	width:100%;
+}
+button.menu-toggle {
+	margin-right: 1%;
+}
+.top-navigation .menu-top-menu-container{
+	display: none;
+}
+.top-navigation ul {
+	display: none;
+	list-style: none;
+}
+.top-navigation ul li {
+	width:20%;
+	background-color: white;
+	color:#017C8F;
+	margin-left: 1%;
+}
+.top-navigation ul li a {
+	color:#017C8F;
+	text-decoration: none;
+	text-align: center;
+}
 .main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 }
-
 .main-navigation ul {
 	/*display: none;*/
 	list-style: none;
@@ -1028,7 +885,7 @@ a:active {
 	-webkit-flex-flow:row wrap;
 }
 
-.main-navigation li {
+.main-navigation ul li {
 	float: left;
 	position: relative;
 	width:40%;
@@ -1038,16 +895,17 @@ a:active {
 	box-shadow: 2px 2px 5px #595959;
 	border-radius: 4px;
 }
-.main-navigation li:hover{
+.main-navigation ul li:hover{
 	box-shadow: none;
 }
 
-.main-navigation a {
+.main-navigation ul li a {
 	display: block;
 	text-decoration: none;
 	color:#dc6404;
-	font-variant: small-caps;
 	text-align: center;
+	font-weight: bold;
+	font-size:0.8em;
 }
 
 .main-navigation ul ul {
@@ -1101,18 +959,29 @@ a:active {
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.menu-toggle {
 	display: block;
+	float: right;
+	list-style: none;
 }
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	/*.main-navigation ul {
-		display: block;
-	}*/
+.top-navigation.toggled .menu-top-menu-container {
+	display: block;
+	position:absolute;
+	top:20%;
+	left:44%;
+}
+.top-navigation.toggled ul {
+	display:block;
+}
+.top-navigation.toggled ul li {
+	background-color: white;
+	color:#017C8F;
+	width:120%;
+	text-align: center;
+	font-size: 0.9em;
+	padding: 1%;
+	margin-bottom:1%;
+	border-radius: 4px;
 }
 
 .site-main .comment-navigation,
@@ -1387,4 +1256,368 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+/*352px*/
+@media all and (min-width:22em){
+	.title-move {
+		bottom:13px;
+	}
+}
+/*376px*/
+@media all and (min-width:23.5em){
+	.title-move {
+		bottom:20px;
+	}
+}
+/*400px*/
+@media all and (min-width:25em){
+	.title-move {
+		bottom:27px;
+	}
+}
+/*440px*/
+@media all and (min-width:27.5em){
+	.title-move {
+		bottom:31px;
+	}
+	.site-intro span {
+		bottom:4px;
+	}
+	.site-intro .logo {
+		width:17%;
+	}
+	.app-store a {
+		width:17%;
+	}
+}
+/*470px*/
+@media all and (min-width:29.375em){
+	.title-move {
+		bottom:38px;
+	}
+/*502px*/
+@media all and (min-width:31.375em){
+	.site-intro span {
+		bottom:6px;
+	}
+	table.step .step-number {
+		padding:1% 3%;
+	}
+	.front-page a.button {
+		width: 35%;
+		padding: 3%;
+		font-size: 1.1em;
+	}
+}
+/*536px*/
+@media all and (min-width:33.5em){
+	#branding.smaller {
+		height:120px;
+	}
+	.title-move {
+		bottom:30px;
+	}
+}
+/*570px*/
+@media all and (min-width:33.5em){
+	.site-intro span {
+		bottom: 12px;
+	}
+}
+/*600px*/
+@media all and (min-width:37.5em){
+	.app-store a {
+		width:13%;
+	}
+	.site-intro .logo {
+		width:16%;
+	}
+	.menu-toggle {
+		display: none;
+	}
+	.site-branding {
+		padding-top:0;
+	}
+	.title-move {
+		bottom:33px;
+	}
+	#branding.smaller {
+		height:135px;
+	}
+	.top-navigation .menu-top-menu-container{
+		display:flex;
+		justify-content:flex-end;
+		display:-webkit-box;
+		display:-moz-box;
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		-webkit-box-pack:flex-end;
+		-moz-box-pack:flex-end;
+		-ms-flex-pack:flex-end;
+		-webkit-justify-content:flex-end;
+	}
+	.top-navigation ul {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content:flex-end;
+		display:-webkit-box;
+		display:-moz-box;
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		-webkit-box-pack:flex-end;
+		-moz-box-pack:flex-end;
+		-ms-flex-pack:flex-end;
+		-webkit-justify-content:flex-end;
+		-ms-flex-flow:row nowrap;
+		-webkit-flex-flow:row nowrap;
+		margin-right: 1%;
+	}
+	.top-navigation ul li {
+		width:90px;
+		padding:2% 1%;
+		text-align: center;
+		border-radius:0px 0px 4px 4px;
+	}
+	.main-navigation ul li a {
+		font-size: 0.9em;
+	}
+}
+/*660px*/
+@media all and (min-width:41.25em){
+	#branding.smaller {
+		height:143px;
+	}
+	.title-move {
+		bottom:28px;
+	}
+	.site-intro .logo {
+		width:15%;
+	}
+	.site-intro span {
+		bottom:13px;
+	}
+}
+/*714px*/
+@media all and (min-width:44.625em){
+	.title-move {
+		bottom:35px;
+	}
+}
+/*760px*/
+@media all and (min-width:47.5em){
+	#branding.smaller {
+		height:152px;
+	}
+	.app-store a {
+		width:11%;
+	}
+	#what p, #how p {
+		margin-bottom:5%;
+	}
+	table.step {
+		margin:1% 1% 1% 1%;
+	}
+	table.step .step-number {
+		padding:1% 4%;
+	}
+	.straight-line {
+		display:none;
+	}
+	table.step .title-col{
+		vertical-align: top;
+		width:50%;
+		padding:10% 1% 1% 1%;
+	}
+	table.step .image-col{
+		width:40%;
+	}
+	table.step .step-description {
+		display:none;
+	}
+	table.step .step-description-desktop {
+		display:block;
+		line-height: 1.1em;
+	}
+	table.step.left.first, table.step.left.last {
+		width:60%;
+		margin:0% 10% -15% 5%;
+	}
+	table.step.left .title-col{
+		float:right;
+	}
+	table.step.left .image-col{
+		float:left;
+	}
+	table.step.left .step-description-desktop{
+		text-align: right;
+		margin-right:18%;
+	}
+	table.step.left .curved-line-left{
+		display:block;
+		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
+		background-size:cover;
+		padding-bottom:150%;
+		position:relative;
+		bottom:80px;
+		right:5px;
+	}
+	table.step.left .step-title {
+		text-align:right;
+	}
+	table.step.left .step-number {
+		float:right;
+	}
+	table.step.right.first {
+		width:60%;
+		margin:0% 10% -14% 35%;
+	}
+	table.step.right.last {
+		width:60%;
+		margin:0% 5% 0% 35%
+	}
+	table.step.right .title-col{
+		float:left;
+	}
+	table.step.right .image-col{
+		float:right;
+	}
+	table.step.right .step-description-desktop{
+		text-align: left;
+		margin-left:18%;
+	}
+	table.step.right .curved-line-right{
+		display:block;
+		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
+		background-size:cover;
+		-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+		padding-bottom:150%;
+		position:relative;
+		bottom:64px;
+		right:5px;
+	}
+	table.step.right .step-title {
+		text-align:left;
+	}
+
+	.front-page a.button {
+		width:25%;
+		padding:2% 1%;
+	}
+	.follow {
+		margin:6% auto 0% auto;
+	}
+	.follow h2 {
+		font-size:2em;
+		letter-spacing: .1em;
+	}
+	.social-icon{
+		font-size:2.5em;
+	}
+	footer{
+		padding-top:17%;
+	}
+	.main-navigation li {
+		width:20%;
+	}
+	.menu-front-page-menu-container {
+		margin:0 5%;
+	}
+}
+/*800px*/
+@media all and (min-width:50em){
+	.site-intro .logo {
+		width:14%;
+	}
+}
+/*868px*/
+@media all and (min-width:54.25em){
+	.site-intro span {
+		bottom:18px;
+	}
+	.title-move {
+		bottom:39px;
+	}
+	table.step.left {
+		margin:0% 10% -10% 5%;
+	}
+	table.step.left .curved-line-left{
+		bottom:65px;
+	}
+	table.step.right .curved-line-right{
+		bottom:65px;
+	}
+	table.step.right.last {
+		margin:0% 5% 0% 35%;
+	}
+}
+/*915px*/
+@media all and (min-width:57.1875em){
+	#branding.smaller {
+		height:156px;
+	}
+	.site-intro .logo {
+		left:0%;
+	}
+	.site-intro span {
+		bottom:23px;
+		right:1%;
+	}
+	.app-store a {
+		width:9%;
+	}
+	.front-page a.button{
+		width:20%;
+		padding:1.5% 1%;
+	}
+	.menu-front-page-menu-container {
+		margin:0 auto;
+		max-width: 1000px;
+	}
+}
+/*1930px*/
+@media all and (min-width:120.625em){
+	#branding.smaller {
+		height:170px;
+	}
+	.site-intro .logo {
+		width:15%;
+	}
+	.site-title {
+		font-size:4em;
+	}
+	.site-description {
+		font-size:2.5em;
+	}
+	.app-store a {
+		width:11%;
+	}
+}
+/*3500px*/
+@media all and (min-width:218.75em){
+	#branding.smaller {
+		height:223px;
+	}
+	.title-move {
+		bottom:3px;
+	}
+	.site-intro .logo {
+		width:16%;
+	}
+	.site-title {
+		font-size:5em;
+	}
+	.site-description {
+		font-size:3.5em;
+	}
+	.app-store a {
+		width:13%;
+	}
 }
