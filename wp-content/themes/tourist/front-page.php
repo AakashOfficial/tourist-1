@@ -14,8 +14,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area front-page">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="front-page">
+		<main id="main" class="site-main-front" role="main">
 
 		<?php
 			/* Start the Loop */

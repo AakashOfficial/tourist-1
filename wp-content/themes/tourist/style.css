@@ -27,6 +27,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Typography
 # Elements
 # Front-Page
+# Blog
 # Forms
 # Navigation
 	## Links
@@ -454,7 +455,7 @@ table {
 }
 
 /*--------------------------------------------------------------
-# Elements
+# Front Page
 --------------------------------------------------------------*/
 
 .front-page {
@@ -748,6 +749,36 @@ footer a{
 .relative {
 	position:relative;
 	top:130px;
+}
+
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+
+.content-area {
+    max-width:960px;
+    margin:auto;
+}
+.site-main {
+    width:98%;
+    margin:auto;
+    float:none;
+}
+aside#secondary {
+    width:98%;
+    margin:auto;
+    float:none;
+}
+
+@media all and (min-width: 47.5em) {
+    .site-main {
+        width:68%;
+        float:left;
+    }
+    aside#secondary {
+        width:28%;
+        float:right;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -1301,19 +1332,19 @@ object {
 /*352px*/
 @media all and (min-width:22em){
 	.title-move {
-		bottom:13px;
+		bottom:24px;
 	}
 }
 /*376px*/
 @media all and (min-width:23.5em){
 	.title-move {
-		bottom:20px;
+		bottom:24px;
 	}
 }
 /*400px*/
 @media all and (min-width:25em){
 	.title-move {
-		bottom:27px;
+		bottom:30px;
 	}
 }
 /*440px*/
