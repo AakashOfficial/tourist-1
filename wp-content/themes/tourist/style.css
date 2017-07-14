@@ -98,6 +98,7 @@ a {
 a:active,
 a:hover {
 	outline: 0;
+    cursor: pointer;
 }
 
 abbr[title] {
@@ -559,9 +560,24 @@ table {
 	text-align: center;
 	color:#dc6404;
 }
-video {
-	width:100%;
+.front-page video {
+	width:80%;
 	height:auto;
+}
+.front-page .iframe-wrapper {
+    width:80%;
+    height:0;
+    margin: auto auto 7% auto;
+    position:relative;
+    padding-bottom: 43%;
+    padding-top: 25px;
+}
+.front-page iframe {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }
 table.step.right.first, table.step.left.first{
 	margin:1% 1% -13% 1%;
@@ -631,15 +647,15 @@ table.step .curved-line-right{
 #what:before, #how:before, #download:before {
 	display: block;
   content: " ";
-  margin-top: -245px;
-	height: 245px;
+  margin-top: -370px;
+	height: 370px;
   visibility: hidden;
 }
 #guide:before, #refer:before {
 	display: block;
   content: " ";
-  margin-top: -150px;
-	height: 150px;
+  margin-top: -365px;
+	height: 365px;
   visibility: hidden;
 }
 /*-----FOLLOW-----*/
@@ -668,7 +684,7 @@ footer{
 	background:#017C8F;
 	width:100%;
 	padding-top:20%;
-	margin-top:30%;
+	margin-top:40%;
 	color:white;
 	text-align: center;
 	display:flex;
@@ -677,6 +693,24 @@ footer{
 	-webkit-align-content:flex-end;
 	-ms-flex-flow:column nowrap;
 	-webkit-flex-flow:column nowrap;
+}
+footer img {
+    width:9%;
+    height:auto;
+    max-width: 35px;
+}
+footer a.footer-title {
+    text-decoration: none;
+    color: #dc6404;
+}
+footer a.footer-title:hover, footer a.footer-title:active, footer a.footer-title:visited {
+    color: #dc6404;
+}
+footer span {
+    position:relative;
+    bottom:14px;
+    right:3px;
+    font-size: 1.1em;
 }
 footer h3 {
 	margin:0;
@@ -687,6 +721,9 @@ footer p {
 }
 footer a{
 	color:white;
+}
+.ganyc-logo {
+    margin-top:5px;
 }
 
 /*====== Resize Header on Scroll ==========*/
@@ -969,6 +1006,7 @@ button.menu-toggle {
 	position:absolute;
 	top:20%;
 	left:44%;
+    z-index: 100;
 }
 .top-navigation.toggled ul {
 	display:block;
@@ -1298,6 +1336,12 @@ object {
 	.title-move {
 		bottom:38px;
 	}
+    footer {
+        margin-top:35%;
+    }
+    footer span {
+        bottom:21px;
+    }
 /*502px*/
 @media all and (min-width:31.375em){
 	.site-intro span {
@@ -1333,7 +1377,12 @@ object {
 		width:13%;
 	}
 	.site-intro .logo {
-		width:16%;
+		width:14%;
+        left:1%;
+	}
+    .site-intro span {
+		bottom: 6px;
+        right:4px;
 	}
 	.menu-toggle {
 		display: none;
@@ -1384,6 +1433,12 @@ object {
 	.main-navigation ul li a {
 		font-size: 0.9em;
 	}
+    footer {
+        margin-top: 28%;
+    }
+    footer img {
+        width:7%;
+    }
 }
 /*660px*/
 @media all and (min-width:41.25em){
@@ -1394,7 +1449,7 @@ object {
 		bottom:28px;
 	}
 	.site-intro .logo {
-		width:15%;
+		width:13%;
 	}
 	.site-intro span {
 		bottom:13px;
@@ -1405,6 +1460,12 @@ object {
 	.title-move {
 		bottom:35px;
 	}
+    footer {
+        padding-top:18%;
+    }
+    footer img {
+        width:6%;
+    }
 }
 /*760px*/
 @media all and (min-width:47.5em){
@@ -1493,11 +1554,11 @@ object {
 		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
 		background-size:cover;
 		-moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
 		padding-bottom:150%;
 		position:relative;
 		bottom:64px;
@@ -1533,9 +1594,15 @@ object {
 }
 /*800px*/
 @media all and (min-width:50em){
+/*
 	.site-intro .logo {
 		width:14%;
 	}
+*/
+    .site-intro span {
+        bottom:15px;
+        right:6px;
+    }
 }
 /*868px*/
 @media all and (min-width:54.25em){
@@ -1557,18 +1624,20 @@ object {
 	table.step.right.last {
 		margin:0% 5% 0% 35%;
 	}
+    footer {
+        margin-top:24%;
+    }
+    footer img {
+        width:5%;
+    }
 }
 /*915px*/
 @media all and (min-width:57.1875em){
 	#branding.smaller {
 		height:156px;
 	}
-	.site-intro .logo {
-		left:0%;
-	}
 	.site-intro span {
 		bottom:23px;
-		right:1%;
 	}
 	.app-store a {
 		width:9%;
@@ -1581,6 +1650,29 @@ object {
 		margin:0 auto;
 		max-width: 1000px;
 	}
+    footer {
+        padding-top:14%;
+        margin-top: 22%;
+    }
+    footer img {
+        width:4%;
+    }
+    footer span {
+        bottom:18px;
+    }
+}
+/*1150px*/
+@media all and (min-width:71.875em){
+    .site-intro h2 {
+        margin:6px 0 0 0;
+    }
+    footer {
+        padding-top:145px;
+        margin-top:220px;
+    }
+    footer span {
+        bottom:16px;
+    }
 }
 /*1930px*/
 @media all and (min-width:120.625em){
@@ -1588,7 +1680,8 @@ object {
 		height:170px;
 	}
 	.site-intro .logo {
-		width:15%;
+		width:128px;
+        left:9px;
 	}
 	.site-title {
 		font-size:4em;
