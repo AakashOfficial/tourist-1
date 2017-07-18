@@ -507,13 +507,13 @@ table {
 	text-decoration:none;
 	color:#dc6404;
 }
-.site-intro .logo{
+.site-intro .logo, .site-intro-page .logo {
 	width:18%;
 	position: relative;
 	left:2%;
 	top:26px;
 }
-.site-intro span {
+.site-intro span, .site-intro-page span {
 	text-shadow:0px 0px;
 	position:relative;
 	right:0px;
@@ -755,6 +755,50 @@ footer a{
 # Blog
 --------------------------------------------------------------*/
 
+.site-branding-page {
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.35), rgba(0,0,0,0.35)),
+		url(img/tourist-background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width:100%;
+}
+.site-intro-page {
+	clear:both;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-flex-pack:center;
+	-webkit-justify-content:center;
+	-webkit-box-align:center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-ms-flex-flow:column nowrap;
+	-webkit-flex-flow:column nowrap;
+	position: static;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+.site-intro-page .title-page {
+	text-align: center;
+	font-family: 'Aller', 'Asap', sans-serif;
+	font-size:3.3em;
+	font-weight: bold;
+}
+.site-intro-page .title-page a, .site-intro-page .title-page a:visited, .site-intro-page .title-page a:hover {
+	text-decoration:none;
+	color:#dc6404;
+}
 .content-area {
     max-width:960px;
     margin:auto;
@@ -1352,10 +1396,10 @@ object {
 	.title-move {
 		bottom:31px;
 	}
-	.site-intro span {
+	.site-intro span, .site-intro-page span {
 		bottom:4px;
 	}
-	.site-intro .logo {
+	.site-intro .logo, .site-intro-page .logo {
 		width:17%;
 	}
 	.app-store a {
@@ -1375,7 +1419,7 @@ object {
     }
 /*502px*/
 @media all and (min-width:31.375em){
-	.site-intro span {
+	.site-intro span, .site-intro-page span {
 		bottom:6px;
 	}
 	table.step .step-number {
@@ -1398,7 +1442,7 @@ object {
 }
 /*570px*/
 @media all and (min-width:33.5em){
-	.site-intro span {
+	.site-intro span, .site-intro-page span {
 		bottom: 12px;
 	}
 }
@@ -1407,11 +1451,11 @@ object {
 	.app-store a {
 		width:13%;
 	}
-	.site-intro .logo {
+	.site-intro .logo, .site-intro-page .logo {
 		width:14%;
         left:1%;
 	}
-    .site-intro span {
+    .site-intro span, .site-intro-page span {
 		bottom: 6px;
         right:4px;
 	}
@@ -1479,10 +1523,10 @@ object {
 	.title-move {
 		bottom:28px;
 	}
-	.site-intro .logo {
+	.site-intro .logo, .site-intro-page .logo {
 		width:13%;
 	}
-	.site-intro span {
+	.site-intro span, .site-intro-page span {
 		bottom:13px;
 	}
 }
@@ -1630,14 +1674,14 @@ object {
 		width:14%;
 	}
 */
-    .site-intro span {
+    .site-intro span, .site-intro-page span {
         bottom:15px;
         right:6px;
     }
 }
 /*868px*/
 @media all and (min-width:54.25em){
-	.site-intro span {
+	.site-intro span, .site-intro-page span {
 		bottom:18px;
 	}
 	.title-move {
@@ -1667,7 +1711,7 @@ object {
 	#branding.smaller {
 		height:156px;
 	}
-	.site-intro span {
+	.site-intro span, .site-intro-page span {
 		bottom:23px;
 	}
 	.app-store a {
@@ -1710,7 +1754,7 @@ object {
 	#branding.smaller {
 		height:170px;
 	}
-	.site-intro .logo {
+	.site-intro .logo, .site-intro-page .logo {
 		width:128px;
         left:9px;
 	}
@@ -1732,7 +1776,7 @@ object {
 	.title-move {
 		bottom:3px;
 	}
-	.site-intro .logo {
+	.site-intro .logo, .site-intro-page .logo {
 		width:16%;
 	}
 	.site-title {

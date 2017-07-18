@@ -26,16 +26,11 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'tourist' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+        
+    <?php if ( is_front_page() ) : ?>
+        
 		<div id="branding" class="site-branding">
-			<!-- <?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-			?> -->
-			<nav id="top-nav" class="top-navigation" role="navigation">
+            <nav id="top-nav" class="top-navigation" role="navigation">
 				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">&#9776;</button>
 				<?php
 					wp_nav_menu( array(
@@ -54,10 +49,32 @@
 				<p id="subtitle-two">Find your Tour Guide on Demand and in Real Time</p>
 			</div>
 
-			<!-- <?php $description = get_bloginfo( 'description', 'display' );?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p> -->
-
 		</div><!-- .site-branding -->
+        
+    <?php else : ?>
+        
+        <div class="site-branding-page">  
+            <nav id="top-nav" class="top-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">&#9776;</button>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'top-menu'
+					) );
+				?>
+			</nav><!-- #top-navigation -->
+			<div class="site-intro-page">
+				<div class="title-page">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="logo" src= "http://localhost:8888/tourist/wp-content/uploads/2017/07/tourist-logo-e1499271214549.png" />
+						<span>ourist</span>
+					</a>
+				</div>
+			</div>
+
+		</div><!-- .site-branding-page -->
+            
+    <?php endif; ?>
+			
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<?php
