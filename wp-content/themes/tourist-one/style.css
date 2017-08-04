@@ -1,0 +1,1792 @@
+/*
+Theme Name: tourist-one
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: tourist
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+tourist is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Front-Page
+# Blog
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
+body {
+	margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+    cursor: pointer;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@font-face {
+	font-family: AllerDisplay;
+	src: url('font/AllerDisplay.ttf') format('truetype');
+}
+@font-face {
+	font-family: Aller;
+	src: url('font/Aller_Rg.ttf') format('truetype');
+}
+@font-face {
+	font-family: Aller;
+	src: url('font/Aller_Bd.ttf') format('truetype');
+	font-weight:bold;
+}
+@font-face {
+	font-family: Aller;
+	src: url('font/Aller_BdIt.ttf') format('truetype');
+	font-weight:bold;
+	font-style: italic;
+}
+@font-face {
+	font-family: Aller;
+	src: url('font/Aller_It.ttf') format('truetype');
+	font-style: italic;
+}
+@font-face {
+	font-family: Aller;
+	src: url('font/Aller_Lt.ttf') format('truetype');
+	font-weight:lighter;
+}
+@font-face {
+	font-family: Aller;
+	src: url('font/Aller_LtIt.ttf') format('truetype');
+	font-weight:lighter;
+	font-style: italic;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: 'Aller', 'Asap', sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Front Page
+--------------------------------------------------------------*/
+
+.front-page {
+	max-width: 960px;
+	margin:auto;
+}
+.site-branding {
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.35), rgba(0,0,0,0.35)),
+		url(img/tourist-background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width:100%;
+	height:100%;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+.site-intro {
+	clear:both;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-flex-pack:center;
+	-webkit-justify-content:center;
+	-webkit-box-align:center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-ms-flex-flow:column nowrap;
+	-webkit-flex-flow:column nowrap;
+	position: relative;
+	bottom:2px;
+}
+.site-intro .title{
+	text-align: center;
+	font-family: 'Aller', 'Asap', sans-serif;
+	font-size:3.3em;
+	font-weight: bold;
+}
+.site-intro .title a, .site-intro .title a:visited, .site-intro .title a:hover {
+	text-decoration:none;
+	color:#dc6404;
+}
+.site-intro .logo, .site-intro-page .logo {
+	width:18%;
+	position: relative;
+	left:2%;
+	top:26px;
+}
+.site-intro span, .site-intro-page span {
+	text-shadow:0px 0px;
+	position:relative;
+	right:0px;
+	bottom:0px;
+}
+.site-intro h2{
+	color: white;
+	text-align: center;
+	margin:1% 0 0 0;
+}
+.site-intro p {
+	color:white;
+	text-align: center;
+	padding:0 10%;
+	font-variant: small-caps;
+	font-style: oblique;
+	margin:0;
+}
+.app-store p {
+	display: flex;
+	justify-content: center;
+	flex-flow:row nowrap;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-flex-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-flow:row nowrap;
+	-webkit-flex-flow:row nowrap;
+}
+.app-store a {
+	text-decoration:none;
+	width:20%;
+	height:auto;
+	margin:1% 3%;
+}
+.front-page h1{
+	text-align: center;
+	color:#282828;
+}
+.front-page p {
+	text-align: center;
+	color:#dc6404;
+}
+.front-page video {
+	width:80%;
+	height:auto;
+}
+.front-page .iframe-wrapper {
+    width:80%;
+    height:0;
+    margin: auto auto 7% auto;
+    position:relative;
+    padding-bottom: 43%;
+    padding-top: 25px;
+}
+.front-page iframe {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+table.step.right.first, table.step.left.first{
+	margin:1% 1% -13% 1%;
+}
+table.step.left.last{
+	margin:1% 1% -25% 1%;
+}
+table.step.right.last{
+	margin:1%;
+}
+table.step .step-number {
+	padding: 1% 4%;
+	border-radius: 50%;
+	background-color:#04BFDC;
+	color:white;
+	font-weight: bold;
+	text-align:center;
+	font-size:1.2em;
+	float:left;
+	margin:0 3%;
+}
+table.step .title-col {
+	vertical-align: bottom;
+	padding:1%;
+}
+table.step .image-col {
+	vertical-align: top;
+	padding:1%;
+}
+table.step .step-description {
+	padding-left:12%;
+	width:70%;
+	font-size: 0.9em;
+	vertical-align: top;
+	display:table-cell;
+}
+table.step .step-description-desktop {
+	display:none;
+}
+table.step .curved-line-left{
+	display: none;
+}
+table.step .curved-line-right{
+	display:none;
+}
+.straight-line {
+	display:block;
+	background-image:url("http://localhost:8888/tourist/wp-content/uploads/2017/06/straight-line.png");
+	background-repeat:no-repeat;
+	padding-bottom:120%;
+	position:relative;
+	right:50px;
+	bottom:80px;
+}
+.front-page a.button {
+	display: block;
+	margin:3% auto;
+	font-size: 1em;
+	width:50%;
+	padding:4%;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+/*----To account for header when resized-----*/
+
+#what:before, #how:before, #download:before {
+	display: block;
+  content: " ";
+  margin-top: -370px;
+	height: 370px;
+  visibility: hidden;
+}
+#guide:before, #refer:before {
+	display: block;
+  content: " ";
+  margin-top: -365px;
+	height: 365px;
+  visibility: hidden;
+}
+/*-----FOLLOW-----*/
+.follow {
+	color:#dc6404;
+	text-align: center;
+	text-transform: uppercase;
+	margin:6% auto;
+}
+.follow h2{
+	margin:0;
+}
+.social-icon{
+	font-size:2em;
+	margin:1%;
+}
+.social-icon a{
+	color:#04bfdc;
+}
+.social-icon a:hover{
+	color:#017C8F;
+}
+
+/*-----FOOTER-----*/
+.site-footer{
+	background:#017C8F;
+	width:100%;
+	padding-top:20%;
+	margin-top:40%;
+	color:white;
+	text-align: center;
+	display:flex;
+	align-content: flex-end;
+	flex-flow:column nowrap;
+	-webkit-align-content:flex-end;
+	-ms-flex-flow:column nowrap;
+	-webkit-flex-flow:column nowrap;
+}
+.site-footer img {
+    width:9%;
+    height:auto;
+    max-width: 35px;
+}
+.site-footer a.footer-title {
+    text-decoration: none;
+    color: #dc6404;
+}
+.site-footer a.footer-title:hover, .site-footer a.footer-title:active, .site-footer a.footer-title:visited {
+    color: #dc6404;
+}
+.site-footer span {
+    position:relative;
+    bottom:14px;
+    right:3px;
+    font-size: 1.1em;
+}
+.site-footer h3 {
+	margin:0;
+}
+.site-footer p {
+	margin:0;
+	font-size:0.8em;
+}
+.site-footer a{
+	color:white;
+}
+.ganyc-logo {
+    margin-top:5px;
+}
+
+/*====== Resize Header on Scroll ==========*/
+#branding.smaller {
+	height:100px;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	position: fixed;
+	top:0;
+	z-index: 99;
+}
+.title-move {
+	position:relative;
+	bottom:8px;
+}
+.title-move span {
+	text-shadow:0px 2px 3px #666666;
+}
+.hidden {
+	display: none;
+}
+.relative {
+	position:relative;
+	top:130px;
+}
+
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+
+.site-branding-page {
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.35), rgba(0,0,0,0.35)),
+		url(img/tourist-background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width:100%;
+}
+.site-intro-page {
+	clear:both;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column nowrap;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-flex-pack:center;
+	-webkit-justify-content:center;
+	-webkit-box-align:center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-ms-flex-flow:column nowrap;
+	-webkit-flex-flow:column nowrap;
+	position: static;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+.site-intro-page .title-page {
+	text-align: center;
+	font-family: 'Aller', 'Asap', sans-serif;
+	font-size:3.3em;
+	font-weight: bold;
+}
+.site-intro-page .title-page a, .site-intro-page .title-page a:visited, .site-intro-page .title-page a:hover {
+	text-decoration:none;
+	color:#dc6404;
+}
+.content-area {
+    max-width:960px;
+    margin:auto;
+}
+.site-main {
+    width:98%;
+    margin:auto;
+    float:none;
+}
+aside#secondary {
+    width:98%;
+    margin:auto;
+    float:none;
+}
+
+@media all and (min-width: 47.5em) {
+    .site-main {
+        width:68%;
+        float:left;
+    }
+    aside#secondary {
+        width:28%;
+        float:right;
+    }
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.front-page .button {
+	border: 1px solid;
+	border-color: #017C8F;
+	border-radius: 4px;
+	background: #017C8F;
+	color: white;
+	font-size: 12px;
+	font-size: 1em;
+	line-height: 1;
+	padding: .6em 1em .4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.front-page .button:hover {
+	border-color: #01b0cb;
+	background:#01b0cb;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #01b0cb;
+	background:#01b0cb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: #017C8F;
+}
+
+a:visited {
+	color: #04bfdc;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.top-navigation {
+	width:100%;
+}
+button.menu-toggle {
+	margin-right: 1%;
+}
+.top-navigation .menu-top-menu-container{
+	display: none;
+}
+.top-navigation ul {
+	display: none;
+	list-style: none;
+}
+.top-navigation ul li {
+	width:20%;
+	background-color: white;
+	color:#017C8F;
+	margin-left: 1%;
+}
+.top-navigation ul li a {
+	color:#017C8F;
+	text-decoration: none;
+	text-align: center;
+}
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.main-navigation ul {
+	/*display: none;*/
+	list-style: none;
+	margin: 3% 0 0 0;
+	padding-left: 0;
+	width:100%;
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	-webkit-box-pack:space-around;
+	-moz-box-pack:space-around;
+	-ms-flex-pack:space-around;
+	-webkit-justify-content:space-around;
+	-ms-flex-flow:row wrap;
+	-webkit-flex-flow:row wrap;
+}
+
+.main-navigation ul li {
+	float: left;
+	position: relative;
+	width:40%;
+	max-width: 152px;
+	margin-bottom:3%;
+	border:solid 2px #04bfdc;
+	box-shadow: 2px 2px 5px #595959;
+	border-radius: 4px;
+}
+.main-navigation ul li:hover{
+	box-shadow: none;
+}
+
+.main-navigation ul li a {
+	display: block;
+	text-decoration: none;
+	color:#dc6404;
+	text-align: center;
+	font-weight: bold;
+	font-size:0.8em;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul ul li {
+
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+}
+
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
+}
+
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+}
+
+/* Small menu. */
+.menu-toggle {
+	display: block;
+	float: right;
+	list-style: none;
+}
+.top-navigation.toggled .menu-top-menu-container {
+	display: block;
+	position:absolute;
+	top:20%;
+	left:44%;
+    z-index: 100;
+}
+.top-navigation.toggled ul {
+	display:block;
+}
+.top-navigation.toggled ul li {
+	background-color: white;
+	color:#017C8F;
+	width:120%;
+	text-align: center;
+	font-size: 0.9em;
+	padding: 1%;
+	margin-bottom:1%;
+	border-radius: 4px;
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+/*352px*/
+@media all and (min-width:22em){
+	.title-move {
+		bottom:24px;
+	}
+}
+/*376px*/
+@media all and (min-width:23.5em){
+	.title-move {
+		bottom:24px;
+	}
+}
+/*400px*/
+@media all and (min-width:25em){
+	.title-move {
+		bottom:30px;
+	}
+}
+/*440px*/
+@media all and (min-width:27.5em){
+	.title-move {
+		bottom:31px;
+	}
+	.site-intro span, .site-intro-page span {
+		bottom:4px;
+	}
+	.site-intro .logo, .site-intro-page .logo {
+		width:17%;
+	}
+	.app-store a {
+		width:17%;
+	}
+}
+/*470px*/
+@media all and (min-width:29.375em){
+	.title-move {
+		bottom:38px;
+	}
+    .site-footer {
+        margin-top:35%;
+    }
+    .site-footer span {
+        bottom:21px;
+    }
+/*502px*/
+@media all and (min-width:31.375em){
+	.site-intro span, .site-intro-page span {
+		bottom:6px;
+	}
+	table.step .step-number {
+		padding:1% 3%;
+	}
+	.front-page a.button {
+		width: 35%;
+		padding: 3%;
+		font-size: 1.1em;
+	}
+}
+/*536px*/
+@media all and (min-width:33.5em){
+	#branding.smaller {
+		height:120px;
+	}
+	.title-move {
+		bottom:30px;
+	}
+}
+/*570px*/
+@media all and (min-width:33.5em){
+	.site-intro span, .site-intro-page span {
+		bottom: 12px;
+	}
+}
+/*600px*/
+@media all and (min-width:37.5em){
+	.app-store a {
+		width:13%;
+	}
+	.site-intro .logo, .site-intro-page .logo {
+		width:14%;
+        left:1%;
+	}
+    .site-intro span, .site-intro-page span {
+		bottom: 6px;
+        right:4px;
+	}
+	.menu-toggle {
+		display: none;
+	}
+	.site-branding {
+		padding-top:0;
+	}
+	.title-move {
+		bottom:33px;
+	}
+	#branding.smaller {
+		height:135px;
+	}
+	.top-navigation .menu-top-menu-container{
+		display:flex;
+		justify-content:flex-end;
+		display:-webkit-box;
+		display:-moz-box;
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		-webkit-box-pack:flex-end;
+		-moz-box-pack:flex-end;
+		-ms-flex-pack:flex-end;
+		-webkit-justify-content:flex-end;
+	}
+	.top-navigation ul {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content:flex-end;
+		display:-webkit-box;
+		display:-moz-box;
+		display:-ms-flexbox;
+		display:-webkit-flex;
+		-webkit-box-pack:flex-end;
+		-moz-box-pack:flex-end;
+		-ms-flex-pack:flex-end;
+		-webkit-justify-content:flex-end;
+		-ms-flex-flow:row nowrap;
+		-webkit-flex-flow:row nowrap;
+		margin-right: 1%;
+	}
+	.top-navigation ul li {
+		width:90px;
+		padding:2% 1%;
+		text-align: center;
+		border-radius:0px 0px 4px 4px;
+	}
+	.main-navigation ul li a {
+		font-size: 0.9em;
+	}
+    .site-footer {
+        margin-top: 28%;
+    }
+    .site-footer img {
+        width:7%;
+    }
+}
+/*660px*/
+@media all and (min-width:41.25em){
+	#branding.smaller {
+		height:143px;
+	}
+	.title-move {
+		bottom:28px;
+	}
+	.site-intro .logo, .site-intro-page .logo {
+		width:13%;
+	}
+	.site-intro span, .site-intro-page span {
+		bottom:13px;
+	}
+}
+/*714px*/
+@media all and (min-width:44.625em){
+	.title-move {
+		bottom:35px;
+	}
+    .site-footer {
+        padding-top:18%;
+    }
+    .site-footer img {
+        width:6%;
+    }
+}
+/*760px*/
+@media all and (min-width:47.5em){
+	#branding.smaller {
+		height:152px;
+	}
+	.app-store a {
+		width:11%;
+	}
+	#what p, #how p {
+		margin-bottom:5%;
+	}
+	table.step {
+		margin:1% 1% 1% 1%;
+	}
+	table.step .step-number {
+		padding:1% 4%;
+	}
+	.straight-line {
+		display:none;
+	}
+	table.step .title-col{
+		vertical-align: top;
+		width:50%;
+		padding:10% 1% 1% 1%;
+	}
+	table.step .image-col{
+		width:40%;
+	}
+	table.step .step-description {
+		display:none;
+	}
+	table.step .step-description-desktop {
+		display:block;
+		line-height: 1.1em;
+	}
+	table.step.left.first, table.step.left.last {
+		width:60%;
+		margin:0% 10% -15% 5%;
+	}
+	table.step.left .title-col{
+		float:right;
+	}
+	table.step.left .image-col{
+		float:left;
+	}
+	table.step.left .step-description-desktop{
+		text-align: right;
+		margin-right:18%;
+	}
+	table.step.left .curved-line-left{
+		display:block;
+		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
+		background-size:cover;
+		padding-bottom:150%;
+		position:relative;
+		bottom:80px;
+		right:5px;
+	}
+	table.step.left .step-title {
+		text-align:right;
+	}
+	table.step.left .step-number {
+		float:right;
+	}
+	table.step.right.first {
+		width:60%;
+		margin:0% 10% -14% 35%;
+	}
+	table.step.right.last {
+		width:60%;
+		margin:0% 5% 0% 35%
+	}
+	table.step.right .title-col{
+		float:left;
+	}
+	table.step.right .image-col{
+		float:right;
+	}
+	table.step.right .step-description-desktop{
+		text-align: left;
+		margin-left:18%;
+	}
+	table.step.right .curved-line-right{
+		display:block;
+		background-image: url("http://localhost:8888/tourist/wp-content/uploads/2017/06/curved-line-2.png");
+		background-size:cover;
+		-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+		padding-bottom:150%;
+		position:relative;
+		bottom:64px;
+		right:5px;
+	}
+	table.step.right .step-title {
+		text-align:left;
+	}
+
+	.front-page a.button {
+		width:25%;
+		padding:2% 1%;
+	}
+	.follow {
+		margin:6% auto 0% auto;
+	}
+	.follow h2 {
+		font-size:2em;
+		letter-spacing: .1em;
+	}
+	.social-icon{
+		font-size:2.5em;
+	}
+	.site-footer{
+		padding-top:17%;
+	}
+	.main-navigation li {
+		width:20%;
+	}
+	.menu-front-page-menu-container {
+		margin:0 5%;
+	}
+}
+/*800px*/
+@media all and (min-width:50em){
+/*
+	.site-intro .logo {
+		width:14%;
+	}
+*/
+    .site-intro span, .site-intro-page span {
+        bottom:15px;
+        right:6px;
+    }
+}
+/*868px*/
+@media all and (min-width:54.25em){
+	.site-intro span, .site-intro-page span {
+		bottom:18px;
+	}
+	.title-move {
+		bottom:39px;
+	}
+	table.step.left {
+		margin:0% 10% -10% 5%;
+	}
+	table.step.left .curved-line-left{
+		bottom:65px;
+	}
+	table.step.right .curved-line-right{
+		bottom:65px;
+	}
+	table.step.right.last {
+		margin:0% 5% 0% 35%;
+	}
+    .site-footer {
+        margin-top:24%;
+    }
+    .site-footer img {
+        width:5%;
+    }
+}
+/*915px*/
+@media all and (min-width:57.1875em){
+	#branding.smaller {
+		height:156px;
+	}
+	.site-intro span, .site-intro-page span {
+		bottom:23px;
+	}
+	.app-store a {
+		width:9%;
+	}
+	.front-page a.button{
+		width:20%;
+		padding:1.5% 1%;
+	}
+	.menu-front-page-menu-container {
+		margin:0 auto;
+		max-width: 1000px;
+	}
+    .site-footer {
+        padding-top:14%;
+        margin-top: 22%;
+    }
+    .site-footer img {
+        width:4%;
+    }
+    .site-footer span {
+        bottom:18px;
+    }
+}
+/*1150px*/
+@media all and (min-width:71.875em){
+    .site-intro h2 {
+        margin:6px 0 0 0;
+    }
+    .site-footer {
+        padding-top:145px;
+        margin-top:220px;
+    }
+    .site-footer span {
+        bottom:16px;
+    }
+}
+/*1930px*/
+@media all and (min-width:120.625em){
+	#branding.smaller {
+		height:170px;
+	}
+	.site-intro .logo, .site-intro-page .logo {
+		width:128px;
+        left:9px;
+	}
+	.site-title {
+		font-size:4em;
+	}
+	.site-description {
+		font-size:2.5em;
+	}
+	.app-store a {
+		width:11%;
+	}
+}
+/*3500px*/
+@media all and (min-width:218.75em){
+	#branding.smaller {
+		height:223px;
+	}
+	.title-move {
+		bottom:3px;
+	}
+	.site-intro .logo, .site-intro-page .logo {
+		width:16%;
+	}
+	.site-title {
+		font-size:5em;
+	}
+	.site-description {
+		font-size:3.5em;
+	}
+	.app-store a {
+		width:13%;
+	}
+}
+

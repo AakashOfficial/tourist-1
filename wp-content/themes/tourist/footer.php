@@ -15,12 +15,12 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <a class="footer-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-            <img class="logo" src= "http://localhost:8888/tourist/wp-content/uploads/2017/07/tourist-logo-e1499271214549.png" />
-            <span>ourist New App</span>
+            <img class="logo" src= "http://wp.touristnewapp.com/wp-content/uploads/2017/07/tourist-logo-e1500065924998.png" />
+            <span class="span-title">ourist New App</span>
         </a>
         <p>Support: <a href="mailto:support@TouristNewApp.com">support@TouristNewApp.com</a></p>
-        <p><a href="http://touristnewapp.com/terms_privacy.html">Terms</a> and <a href="http://touristnewapp.com/privacy.html">Privacy Policy</a></p>
-        <div class="ganyc-logo"><a href="http://www.ganyc.org/industry-partners" target="_black"><img src="http://localhost:8888/tourist/wp-content/uploads/2017/07/ganyc_logo.png" alt="GANYC" /></a></div>
+        <p><a href="http://touristnewapp.com/terms_privacy.html" target="_blank">Terms</a> and <a href="http://touristnewapp.com/privacy.html" target="_blank">Privacy Policy</a></p>
+        <div class="ganyc-logo"><a href="http://www.ganyc.org/industry-partners" target="_black"><img src="http://wp.touristnewapp.com/wp-content/uploads/2017/07/ganyc_logo.png" alt="GANYC" /><span class="next-to-ganyc">Industry Partner</span></a></div>
         <p>&#169 2016-2099 Pine Group, LLC. All rights reserved.</p>
 	</footer><!-- #colophon -->
     </div><!-- .site-info -->

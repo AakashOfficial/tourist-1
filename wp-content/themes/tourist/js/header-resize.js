@@ -8,7 +8,7 @@ function headerResize() {
     var content = document.getElementById("content");
     var subTitleOne = document.getElementById("subtitle-one");
     var subTitleTwo = document.getElementById("subtitle-two");
-     if (window.pageYOffset > 100) {
+     if (window.pageYOffset > 250) {
         header.classList.add("smaller");
         title.classList.add("title-move");
         nav.classList.add("relative");

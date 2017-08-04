@@ -41,7 +41,7 @@
 			<div class="site-intro">
 				<div id="title" class="title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="logo" src= "http://localhost:8888/tourist/wp-content/uploads/2017/07/tourist-logo-e1499271214549.png" />
+						<img class="logo" src= "http://wp.touristnewapp.com/wp-content/uploads/2017/07/tourist-logo-e1500065924998.png" />
 						<span>ourist</span>
 					</a>
 				</div>
@@ -65,7 +65,7 @@
 			<div class="site-intro-page">
 				<div class="title-page">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="logo" src= "http://localhost:8888/tourist/wp-content/uploads/2017/07/tourist-logo-e1499271214549.png" />
+						<img class="logo" src= "http://wp.touristnewapp.com/wp-content/uploads/2017/07/tourist-logo-e1500065924998.png" />
 						<span>ourist</span>
 					</a>
 				</div>
